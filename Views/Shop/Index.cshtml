@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe E-Commerce Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .navbar .nav-link {
+            margin-right: 15px;
+        }
+
+        .dropdown-menu {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .recommendations {
+            position: absolute;
+            z-index: 1000;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        
+        .card-img-top {
+            height: 200px; /* Fixed height for images */
+            object-fit: cover; /* Ensure images cover the area without stretching */
+        }
+
+        .card {
+            height: 100%; /* Make all cards the same height */
+        }
+    
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shoe Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <li><a class="dropdown-item" href="#">Sneakers</a></li>
+                            <li><a class="dropdown-item" href="#">Boots</a></li>
+                            <li><a class="dropdown-item" href="#">Sandals</a></li>
+                            <li><a class="dropdown-item" href="#">Formal Shoes</a></li>
+                            <li><a class="dropdown-item" href="#">Sports Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="position-relative">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search shoes..." aria-label="Search" id="searchInput" onfocus="showRecommendations()" onblur="hideRecommendations()">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <div class="recommendations" id="searchRecommendations" style="display: none;">
+                        <ul class="list-group position-absolute">
+                            <li class="list-group-item"><a href="#">Running Shoes</a></li>
+                            <li class="list-group-item"><a href="#">Leather Boots</a></li>
+                            <li class="list-group-item"><a href="#">Casual Sneakers</a></li>
+                            <li class="list-group-item"><a href="#">Summer Sandals</a></li>
+                            <li class="list-group-item"><a href="#">Hiking Boots</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ms-3">
+                    <a class="btn btn-outline-primary" href="#"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+                    <a class="btn btn-outline-secondary ms-2" href="#"><i class="fas fa-user-circle"></i> Login</a>
+                    <a class="btn btn-outline-secondary ms-2" href="#"><i class="fas fa-user-plus"></i> Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Shoe Categories</h2>
+        <br /><br />
+        <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="~/Sneakers.jpg" class="card-img-top" alt="Sneakers">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Sneakers</h5>
+                                    <a href="#" class="btn btn-primary">Shop Sneakers</a>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="~/Sandals.jpg" class="card-img-top" alt="Sandals">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Sandals</h5>
+                                    <a href="#" class="btn btn-primary">Shop Sandals</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="~/FormalShoes.jpg" class="card-img-top" alt="Formal Shoes">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Formal Shoes</h5>
+                                    <a href="#" class="btn btn-primary">Shop Formal Shoes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="~/SportsShoes.jpg" class="card-img-top" alt="Sports Shoes">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Sports Shoes</h5>
+                                    <a href="#" class="btn btn-primary">Shop Sports Shoes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="~/HikingBoots.jpg" class="card-img-top" alt="Hiking Boots">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Hiking Boots</h5>
+                                    <a href="#" class="btn btn-primary">Shop Hiking Boots</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <br /><br /><br />
+    <h2 class="text-center">The Best Sellers</h2>
+    <br /><br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="~/ShoeImg1.jpg" class="card-img-top" alt="Shoe Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Stylish Running Shoes</h5>
+                        <p class="card-text">Experience comfort and style with our bestselling running shoes.</p>
+                        <p class="card-price">Price: ₹3,999</p>
+                        <p class="card-reviews">⭐ 4.8/5 (1200 Reviews)</p>
+                        <p class="card-customers">👥 5,000+ Customers</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="~/ShoeImg3.jpg" class="card-img-top" alt="Shoe Image 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Sneakers</h5>
+                        <p class="card-text">Timeless design meets unmatched comfort in our classic sneakers.</p>
+                        <p class="card-price">Price: ₹2,499</p>
+                        <p class="card-reviews">⭐ 4.5/5 (900 Reviews)</p>
+                        <p class="card-customers">👥 3,200+ Customers</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="~/HikingBoots.jpg" class="card-img-top" alt="Shoe Image 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Waterproof Hiking Boots</h5>
+                        <p class="card-text">Conquer the outdoors with our durable and waterproof hiking boots.</p>
+                        <p class="card-price">Price: ₹5,499</p>
+                        <p class="card-reviews">⭐ 4.9/5 (750 Reviews)</p>
+                        <p class="card-customers">👥 2,800+ Customers</p>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showRecommendations() {
+            document.getElementById('searchRecommendations').style.display = 'block';
+        }
+
+        function hideRecommendations() {
+            document.getElementById('searchRecommendations').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
